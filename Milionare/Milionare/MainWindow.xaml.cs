@@ -19,10 +19,16 @@ namespace Milionare
     /// Interakční logika pro MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {      
+        public Frame frame;
         public MainWindow()
         {
             InitializeComponent();
+            frame = FStart;
+
+            frame.Navigate(new StartingMenu(FStart));
+
+
         }
     }
 }
