@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>dolar.ico.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialDesignColors, Version=1.0.0.14576, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.1\lib\net45\MaterialDesignColors.dll</HintPath>
@@ -61,7 +64,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Hexagon.cs" />
     <Compile Include="StartingMenu.xaml.cs">
       <DependentUpon>StartingMenu.xaml</DependentUpon>
     </Compile>
@@ -108,6 +110,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="dolar.ico.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
