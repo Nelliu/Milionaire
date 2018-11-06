@@ -16,24 +16,28 @@ using System.Windows.Shapes;
 namespace Milionare
 {
     /// <summary>
-    /// Interakční logika pro StartingMenu.xaml
+    /// Interaction logic for Menu.xaml
     /// </summary>
-    public partial class StartingMenu : Page
+    public partial class Menu : Page
     {
-
-        // this.NavigationService.Navigate(new StartingMenu());
-        // buttons SVG
-        public StartingMenu()
+        
+        public Menu()
         {
             InitializeComponent();
         }
-        public StartingMenu(Frame frame) : this()
+        public Menu(Frame frame) : this()
         {
             
         }
-      
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Game());
+            
+        }
 
-        
-        
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }

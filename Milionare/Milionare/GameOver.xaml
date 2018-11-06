@@ -1,0 +1,41 @@
+﻿<Page x:Class="Milionare.GameOver"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Milionare"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GameOver">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center">
+            <StackPanel Height="53">
+                <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="10" Background="Black">
+                    <TextBlock TextAlignment="Center" Foreground="White"  VerticalAlignment="Center" TextWrapping="Wrap" Text="Konec hry, co jsi přeješ dělat?" FontSize="15" x:Name="Question"/>
+                </Border>
+            </StackPanel>
+            <StackPanel>
+                <Button HorizontalAlignment="Center" VerticalAlignment="Stretch" Content="Hrát znovu" Background="Green" Click="Button_Click_1"></Button>
+                <Button HorizontalAlignment="Center" VerticalAlignment="Stretch" Content="Ukončit" Background="DarkRed" Click="Button_Click" Margin="5"/>
+
+            </StackPanel>
+            
+        </StackPanel>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="" FontSize="30" Visibility="Hidden" Background="White" Opacity="0.5" Foreground="Green" x:Name="FinalBox1" VerticalAlignment="Stretch" />
+            <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="" FontSize="20" Foreground="Yellow" Background="DimGray" Opacity=".8" x:Name="FinalBox2" Width="auto" />
+        </StackPanel>
+        
+    </Grid>
+</Page>

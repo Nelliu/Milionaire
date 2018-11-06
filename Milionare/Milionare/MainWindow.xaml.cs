@@ -26,7 +26,7 @@ namespace Milionare
             InitializeComponent();
             frame = FStart;
 
-            frame.Navigate(new StartingMenu(FStart));
+            frame.Navigate(new Menu(FStart));
 
 
         }
