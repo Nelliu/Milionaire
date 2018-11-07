@@ -23,11 +23,11 @@ namespace Milionare
     public partial class Game : Page
     {
 
-        public static int status = 0;
+        public static int status = 0; // 0 == nothing, 1 lost, 2 won
         public static int money = 0;
         public static int Difficulity = 1;
-        public static string RightAns = "";
-        public static string Question1 = "";
+        public static string RightAns = ""; // Right answer for each round is saved here
+        public static string Question1 = ""; // Question for round are saved there
         private bool used = false; // if specators help % was used
 
         public Game()
@@ -53,7 +53,7 @@ namespace Milionare
             }
             
         }
-        private void delay()
+        private void delay() // delay after right answer, setting styles back
         {
             var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
             timer.Start();
@@ -96,7 +96,7 @@ namespace Milionare
 
             };
         }
-        private void lostDelay()
+        private void lostDelay() // delay after wrong answer
         {
             var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
             timer.Start();
@@ -107,7 +107,7 @@ namespace Milionare
 
             };
         }
-        private void gameOverRedirect()
+        private void gameOverRedirect() // redirect after end of game
         {
             if (status != 2)
             {
@@ -115,7 +115,7 @@ namespace Milionare
             }
             this.NavigationService.Navigate(new GameOver());
         }
-        private void questionSet()
+        private void questionSet() // changing questions, answers
         {
             var jsonData = File.ReadAllText("questions.json");
             List<Data> data1 = JsonSerialization.ReadFromJsonFile<List<Data>>("questions.json");
@@ -162,7 +162,7 @@ namespace Milionare
             
         }
 
-        private void ans1_Click(object sender, RoutedEventArgs e)
+        private void ans1_Click(object sender, RoutedEventArgs e) // first button click
         {
             if (ans1.Content == RightAns)
             {
@@ -176,7 +176,7 @@ namespace Milionare
                 lostDelay();
             }
         }
-        private void ans2_Click(object sender, RoutedEventArgs e)
+        private void ans2_Click(object sender, RoutedEventArgs e) // second button click
         {
             if (ans2.Content == RightAns)
             {
@@ -190,7 +190,7 @@ namespace Milionare
                 lostDelay();
             }
         }
-        private void ans3_Click(object sender, RoutedEventArgs e)
+        private void ans3_Click(object sender, RoutedEventArgs e) // third button click
         {
             if (ans3.Content == RightAns)
             {
@@ -204,7 +204,7 @@ namespace Milionare
                 lostDelay();
             }
         }
-        private void ans4_Click(object sender, RoutedEventArgs e)
+        private void ans4_Click(object sender, RoutedEventArgs e) // fourth button click
         {
             if (ans4.Content == RightAns)
             {
